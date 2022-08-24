@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: rgb(3, 0, 23);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #111;
+}
+
+body {
+    background: #eee;
+}
+
+.sidebar {
+    width: 280px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    background: white;
+    overflow: hidden;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+.sidebar.active {
+    width: 55px;
+}
+
+.sidebar ul {
+    width: 100%;
+    position: relative;
+    padding: 10px 5px;
+}
+
+.sidebar ul li {
+    width: 100%;
+    position: relative;
+    padding: 15px 13px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sidebar ul li:hover {
+    background: rgb(3, 0, 23);
+}
+
+.sidebar ul li:nth-child(1):hover {
+    background: transparent;
+}
+
+.sidebar ul li:nth-child(1) {
+    pointer-events: none;
+}
+
+.sidebar ul li a {
+    color: royalblue;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.sidebar i {
+    font-size: 1.1rem;
+    margin-right: 20px;
+}
+
+/* sidebar */
+
+main {
+    position: absolute;
+    width: calc(100% - 280px);
+    left: 280px;
+    transition: .3s;
+}
+
+main.active {
+    width: calc(100% - 55px);
+    left: 55px;
+}
+
+header {
+    width: 100%;
+    padding: 10px 15px;    
+    position: absolute;
+    z-index: 1;
+    background: rgb(3, 0, 23);
+}
+
+.btn i {
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #333;
+    outline: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background: none;
+    color: #888;
+}
+
+.search input::-webkit-input-placeholder {
+    color: #888;
+}
+
+.search input:focus {
+    border: 1px solid royalblue;
+}
+
+.search button {
+    padding: 7px 13px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid #333;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.search button i {
+    color: #888;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user i {
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0 5px;
+}
+
+.user .fa-search {
+    display: none;
+}
+
+.router {
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+    margin-bottom: 40px;
+}
+
+.router h3 {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.router i {
+    color: white;
+    margin: 0 20px;
+}
+
+.router p {
+    color: white;
+    font-size: .9rem;
+}
+
+.router span {
+    color: #888;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    width: 300px;
+    background: #eee;
+    border-radius: 10px;
+    padding: 10px 8px;
+    margin: 0 8px;
+}
+
+.card h3 {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.card .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card .flex p {
+    color: black;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.card .flex i {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background: rgb(3, 0, 23);
+    color: white;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: rgb(3, 0, 23);
+    font-size: 1.1rem;
+}
+
+.card span {
+    color: #888;
+    font-size: .9rem;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 960px) {
+    .search {
+        display: none;
+    }
+
+    .user .fa-search {
+        display: block;
+    }
+}
+
+@media (max-width: 650px) {
+    main {
+        width: 100%;
+        left: 0px;
+    }
+}
